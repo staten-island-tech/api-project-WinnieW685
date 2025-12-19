@@ -21,7 +21,7 @@ document.querySelector("#app").innerHTML = `
   </div>
 `; */
 
-setupCounter(document.querySelector("#counter"));
+// setupCounter(document.querySelector("#counter"));
 
 const URL = "https://api.jikan.moe/v4/top/anime?type=ona";
 
