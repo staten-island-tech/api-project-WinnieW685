@@ -50,11 +50,29 @@ async function getAllData() {
     } else {
       const data = await response.json();
       data.data.forEach((card) => console.log(card));
+      return data;
     }
   } catch (error) {
     console.log(error);
   }
 }
-getAllData();
+const data = await getAllData();
 
-function printData() {}
+function inject(data) {
+  //query the container
+  const container = document.querySelector(".container");
+  const html = `<div class="card" data-title= "${data.title}">
+        <h2 class="cardtitle" >${data.title}</h2>
+        <h2 class="cardtitlejp" >${data.title_japanese}</h2>
+        <h2 class="cardtitleen" >${data.title_english}</h2>
+        <h2 class="cardproducer" >${data.producers}</h2>
+        <img src=${data.images.jpg.image_url} alt="">
+        <h4 class="cardsynopsis" >${data.synopsis} </h4>
+        <h4 class="cardepisode" >${data.episodes} </h4>
+        <h4 class="cardstatus" >${data.status} </h4>
+        </div>`;
+  container.insertAdjacentHTML("afterbegin", html);
+  console.log("card");
+}
+
+data.data.forEach((item) => inject(item));
