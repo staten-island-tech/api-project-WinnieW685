@@ -7,6 +7,18 @@
     <title>vite-project</title>
   </head>
   <body>
+    <form action="/search" method="get" id="searchAnime">
+      <input
+        type="search"
+        name="query"
+        placeholder="Search Anime"
+        required
+        autocomplete="on"
+        aria-label="Search site content"
+        id="title"
+      />
+      <button type="submit" class="submit" id="submit">Search</button>
+    </form>
     <h2 id="api-response"></h2>
     <div id="app"></div>
     <div class="container"></div>
