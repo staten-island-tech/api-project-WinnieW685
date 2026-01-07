@@ -7,7 +7,26 @@
     <title>vite-project</title>
   </head>
   <body>
-    <form action="/search" method="get" id="searchAnime">
+    <form class="bg-gray-200" id="searchform">
+      <div
+        class="container h-screen flex justify-center items-center px-4 sm:px-6 lg:px-8"
+      >
+        <div class="relative">
+          <input
+            type="text"
+            class="h-14 w-96 pr-8 pl-5 rounded z-0 focus:shadow focus:outline-none"
+            placeholder="Search anything..."
+            id="title"
+          />
+
+          <div class="absolute top-4 right-3">
+            <i class="fa fa-search text-gray-400 z-20 hover:text-gray-500"></i>
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="submit" id="submit">Search</button>
+    </form>
+    <!-- <form action="/search" method="get" id="searchAnime">
       <input
         type="search"
         name="query"
@@ -18,10 +37,10 @@
         id="title"
       />
       <button type="submit" class="submit" id="submit">Search</button>
-    </form>
+    </form> -->
     <h2 id="api-response"></h2>
     <div id="app"></div>
-    <div class="container"></div>
+    <div class="card bg-base-100 w-96 shadow-sm" data-card="card"></div>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>

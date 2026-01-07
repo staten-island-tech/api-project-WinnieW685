@@ -60,7 +60,7 @@ const data = await getAllData();
 
 function inject(data) {
   //query the container
-  const container = document.querySelector(".container");
+  const container = document.querySelector(".card");
   const html = `<div class="card" data-title="${data.title_english}">
         <h2 class="cardtitleen" >${data.title_english}</h2>
         <img src=${data.images.jpg.image_url} alt="">
@@ -73,3 +73,42 @@ function inject(data) {
 }
 
 data.data.forEach((item) => inject(item));
+/* 
+document.getElementById("searchform").addEventListener("submit", function (e) {
+  //Get Values
+  e.preventDefault();
+  let data = {};
+  data.title_english = document.getElementById("title").value;
+  let realTitle = false;
+  data.data.forEach((item) => {
+    if (item.title === data.title_english) {
+      console.log(data.title_english);
+      realTitle = true;
+    }
+  });
+  if (!realTitle) {
+    console.log("not real title");
+  }
+});
+ */
+
+document.getElementById("searchform").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const searchTitle = document.getElementById("title").value.trim();
+  let realTitle = false;
+
+  data.data.forEach((item) => {
+    if (
+      item.title_english &&
+      item.title_english.toLowerCase() === searchTitle.toLowerCase()
+    ) {
+      realTitle = true;
+      console.log("Found:", item.title_english);
+    }
+  });
+
+  if (!realTitle) {
+    console.log("not real title");
+  }
+});
