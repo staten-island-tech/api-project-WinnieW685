@@ -44,7 +44,7 @@ document.querySelector("#app").innerHTML = `
 
 async function getAllData() {
   try {
-    const response = await fetch("https://api.jikan.moe/v4/top/anime?type=ona");
+    const response = await fetch("https://api.jikan.moe/v4/top/anime");
     if (response.status != 200) {
       throw new Error(response);
     } else {
@@ -91,24 +91,20 @@ document.getElementById("searchform").addEventListener("submit", function (e) {
   }
 });
  */
+async function find(title) {
+  const response = await fetch("https://api.jikan.moe/v4/top/anime");
+  document
+    .getElementById("searchform")
+    .addEventListener("submit", function (e) {
+      e.preventDefault();
 
-document.getElementById("searchform").addEventListener("submit", function (e) {
-  e.preventDefault();
+      const searchTitle = document.getElementById("title").value.trim();
+      let realTitle = false;
+      container.innerHTML = "";
 
-  const searchTitle = document.getElementById("title").value.trim();
-  let realTitle = false;
-
-  data.data.forEach((item) => {
-    if (
-      item.title_english &&
-      item.title_english.toLowerCase() === searchTitle.toLowerCase()
-    ) {
-      realTitle = true;
-      console.log("Found:", item.title_english);
-    }
-  });
-
-  if (!realTitle) {
-    console.log("not real title");
-  }
-});
+      if (!realTitle) {
+        console.log("not real title");
+      }
+    });
+}
+find();
