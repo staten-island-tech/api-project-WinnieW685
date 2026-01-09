@@ -92,8 +92,9 @@ document.getElementById("searchform").addEventListener("submit", function (e) {
 });
  */
 async function find(title) {
-  const response = await fetch("https://api.jikan.moe/v4/top/anime");
+  const URL = `https://api.jikan.moe/v4/anime/${}/characters`
   document
+
     .getElementById("searchform")
     .addEventListener("submit", function (e) {
       e.preventDefault();
