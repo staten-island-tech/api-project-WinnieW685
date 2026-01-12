@@ -67,6 +67,7 @@ function inject(data) {
         <h4 class="cardsynopsis" >${data.synopsis} </h4>
         <h4 class="cardepisode" >${data.episodes} </h4>
         <h4 class="cardstatus" >${data.status} </h4>
+        <button class="cardcharacters">Open</button>
         </div>`;
   container.insertAdjacentHTML("afterbegin", html);
   console.log("card");
