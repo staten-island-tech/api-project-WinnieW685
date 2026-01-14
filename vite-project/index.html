@@ -7,40 +7,36 @@
     <title>vite-project</title>
   </head>
   <body>
-    <form class="bg-gray-200" id="searchform">
+    <form id="searchform" class="max-w-md mx-auto">
       <div
-        class="container h-screen flex justify-center items-center px-4 sm:px-6 lg:px-8"
+        class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none"
       >
-        <div class="relative">
-          <input
-            type="text"
-            class="h-14 w-96 pr-8 pl-5 rounded z-0 focus:shadow focus:outline-none"
-            placeholder="Search anything..."
-            id="title"
-          />
+        <input
+          type="text"
+          id="title"
+          placeholder="Search anything..."
+          class="block w-full p-3 ps-9 bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand shadow-xs placeholder:text-body"
+        />
 
-          <div class="absolute top-4 right-3">
-            <i class="fa fa-search text-gray-400 z-20 hover:text-gray-500"></i>
-          </div>
-        </div>
+        <button
+          type="submit"
+          id="submit"
+          class="absolute end-1.5 bottom-1.5 text-white bg-brand hover:bg-brand-strong box-border border border-transparent focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded text-xs px-3 py-1.5 focus:outline-none"
+        >
+          Submit
+        </button>
       </div>
-      <button type="submit" class="submit" id="submit">Search</button>
     </form>
-    <!-- <form action="/search" method="get" id="searchAnime">
-      <input
-        type="search"
-        name="query"
-        placeholder="Search Anime"
-        required
-        autocomplete="on"
-        aria-label="Search site content"
-        id="title"
-      />
-      <button type="submit" class="submit" id="submit">Search</button>
-    </form> -->
+
+    <h2 id="api-response"></h2>
+
+    <div id="app"></div>
+
+    <div id="cards" class="card bg-base-100 w-96 shadow-sm"></div>
+
     <h2 id="api-response"></h2>
     <div id="app"></div>
-    <div class="card bg-base-100 w-96 shadow-sm" data-card="card"></div>
+    <div class="card bg-base-100 w-96 shadow-sm" id="cards"></div>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>

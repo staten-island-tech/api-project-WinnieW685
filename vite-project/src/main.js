@@ -3,6 +3,7 @@ import "./style.css";
 import viteLogo from "/vite.svg";
 import { setupCounter } from "./counter.js";
 
+
 document.querySelector("#app").innerHTML = `
   <div>
     <a href="https://vite.dev" target="_blank">
@@ -59,9 +60,27 @@ async function getAllData() {
 const data = await getAllData();
 
 function inject(data) {
+  const container = document.querySelector("#cards");
+
+  const html = `
+    <div class="card bg-base-100 w-96 shadow-sm">
+      <h2 class="cardtitleen">${data.title_english || data.title}</h2>
+      <img src="${data.images.jpg.image_url}" alt="">
+      <p class="cardsynopsis">${data.synopsis}</p>
+      <p class="cardepisode">Episodes: ${data.episodes}</p>
+      <p class="cardstatus">Status: ${data.status}</p>
+    </div>
+  `;
+
+  container.insertAdjacentHTML("beforeend", html);
+}
+
+data.data.forEach((item) => inject(item));
+
+/*function inject(data) {
   //query the container
-  const container = document.querySelector(".card");
-  const html = `<div class="card" data-title="${data.title_english}">
+  const container = document.querySelector(".cards");
+  const html = `<div class="card bg-base-100 w-96 shadow-sm">
         <h2 class="cardtitleen" >${data.title_english}</h2>
         <img src=${data.images.jpg.image_url} alt="">
         <h4 class="cardsynopsis" >${data.synopsis} </h4>
@@ -69,12 +88,19 @@ function inject(data) {
         <h4 class="cardstatus" >${data.status} </h4>
         <button class="cardcharacters">Open</button>
         </div>`;
-  container.insertAdjacentHTML("afterbegin", html);
+  container.insertAdjacentHTML("beforeend", html);
   console.log("card");
 }
+function displayAnime(animeList) {
+  const container = document.querySelector(".cards");
+  container.innerHTML = ""; // clear previous cards
 
-data.data.forEach((item) => inject(item));
-/* 
+
+  animeList.forEach((item) => inject(item));
+}*/
+
+//data.data.forEach((item) => inject(item));
+/*
 document.getElementById("searchform").addEventListener("submit", function (e) {
   //Get Values
   e.preventDefault();
@@ -92,21 +118,24 @@ document.getElementById("searchform").addEventListener("submit", function (e) {
   }
 });
  */
-async function find(title) {
-  const URL = `https://api.jikan.moe/v4/anime/${}/characters`
-  document
-
-    .getElementById("searchform")
-    .addEventListener("submit", function (e) {
-      e.preventDefault();
-
-      const searchTitle = document.getElementById("title").value.trim();
-      let realTitle = false;
-      container.innerHTML = "";
-
-      if (!realTitle) {
-        console.log("not real title");
-      }
-    });
+function find() {
+  let form = document.getElementById("searchform");
+  console.log("form");
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    console.log();
+  });
 }
 find();
+
+
+function add(x,y){
+  x + y
+}
+getAllData(x){
+  `animeCrap.com/${x}`
+}
+function getThing(){
+  //x = get user inoput from form
+  getAllData(x)
+}
