@@ -118,24 +118,26 @@ document.getElementById("searchform").addEventListener("submit", function (e) {
   }
 });
  */
-function find() {
-  let form = document.getElementById("searchform");
+function find(userSearch) {
+  let form = document.getElementById("searchform").value.trim();
   console.log("form");
   form.addEventListener("submit", function (e) {
     e.preventDefault();
-    console.log();
+    let userSearch = document.getElementById("searchform").value.trim();
   });
 }
 find();
 
-
-function add(x,y){
+/* function add(x,y){
   x + y
+} */
+function getUser(userSearch) {
+  let userSearch = document.getElementById("title").value.trim();
+  console.log(searched);
+  // `animeCrap.com/${x}`
 }
-getAllData(x){
-  `animeCrap.com/${x}`
-}
-function getThing(){
+getUser(userSearch);
+/* function getThing(){
   //x = get user inoput from form
   getAllData(x)
-}
+} */
