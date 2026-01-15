@@ -154,6 +154,8 @@ function find(userSearch) {
 }
 find();
 
+//clear html, show only the card searched
+
 /* function add(x,y){
   x + y
 } */
