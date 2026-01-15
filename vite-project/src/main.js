@@ -118,24 +118,24 @@ document.getElementById("searchform").addEventListener("submit", function (e) {
   }
 });
  */
-function find() {
+function find(userSearch) {
   let form = document.getElementById("searchform");
   console.log("form");
-  form.addEventListener("submit", function (e) {
+  form.addEventListener(enter, function (e) {
     e.preventDefault();
-    console.log();
+    console.log(works);
+    let userSearch;
   });
 }
 find();
 
-
-function add(x,y){
+/* function add(x,y){
   x + y
-}
-getAllData(x){
+} */
+/* getAllData(x){
   `animeCrap.com/${x}`
 }
 function getThing(){
   //x = get user inoput from form
   getAllData(x)
-}
+} */
