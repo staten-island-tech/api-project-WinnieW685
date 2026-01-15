@@ -118,12 +118,46 @@ document.getElementById("searchform").addEventListener("submit", function (e) {
   }
 });
  */
+<<<<<<< HEAD
 function find(userSearch) {
   let form = document.getElementById("searchform").value.trim();
   console.log("form");
   form.addEventListener("submit", function (e) {
     e.preventDefault();
     let userSearch = document.getElementById("searchform").value.trim();
+=======
+
+async function getUserData(userSearch) {
+  try {
+    const response = await fetch(
+      `https://api.jikan.moe/v4/anime/${userSearch}`
+    );
+    if (response.status != 200) {
+      throw new Error(response);
+    } else {
+      const data = await response.json();
+      data.data.forEach((card) => console.log(card));
+      return data;
+    }
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+function find(userSearch) {
+  let form = document.getElementById("searchform");
+  console.log("form");
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    console.log("working");
+    userSearch = document.getElementById("title");
+    getUserData(userSearch);
+    if (userSearch === `${data.title_english || data.title}`) {
+      card.style.display = "";
+    } else {
+      card.style.display = "none";
+    }
+>>>>>>> 7626e31d42ea65ef772898cd53560c3cfbbf7942
   });
 }
 find();
@@ -131,6 +165,7 @@ find();
 /* function add(x,y){
   x + y
 } */
+<<<<<<< HEAD
 function getUser(userSearch) {
   let userSearch = document.getElementById("title").value.trim();
   console.log(searched);
@@ -138,6 +173,12 @@ function getUser(userSearch) {
 }
 getUser(userSearch);
 /* function getThing(){
+=======
+/* getAllData(x){
+  `animeCrap.com/${x}`
+}
+function getThing(){
+>>>>>>> 7626e31d42ea65ef772898cd53560c3cfbbf7942
   //x = get user inoput from form
   getAllData(x)
 } */
