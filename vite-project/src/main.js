@@ -63,7 +63,7 @@ function inject(data) {
   const container = document.querySelector("#cards");
 
   const html = `
-    <div class="card bg-base-100 w-96 shadow-sm">
+    <div class="card bg-base-100 w-96 shadow-sm" id="card">
       <h2 class="cardtitleen">${data.title_english || data.title}</h2>
       <img src="${data.images.jpg.image_url}" alt="">
       <p class="cardsynopsis">${data.synopsis}</p>
@@ -122,7 +122,7 @@ document.getElementById("searchform").addEventListener("submit", function (e) {
 async function getUserData(userSearch) {
   try {
     const response = await fetch(
-      `https://api.jikan.moe/v4/anime/${userSearch}`
+      `https://api.jikan.moe/v4/anime?=${userSearch}`
     );
     if (response.status != 200) {
       throw new Error(response);
@@ -137,6 +137,7 @@ async function getUserData(userSearch) {
 }
 
 function find(userSearch) {
+  const card = document.querySelectorAll("#card");
   let form = document.getElementById("searchform");
   console.log("form");
   form.addEventListener("submit", function (e) {
