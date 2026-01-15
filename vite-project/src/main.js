@@ -118,14 +118,6 @@ document.getElementById("searchform").addEventListener("submit", function (e) {
   }
 });
  */
-<<<<<<< HEAD
-function find(userSearch) {
-  let form = document.getElementById("searchform").value.trim();
-  console.log("form");
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-    let userSearch = document.getElementById("searchform").value.trim();
-=======
 
 async function getUserData(userSearch) {
   try {
@@ -157,28 +149,10 @@ function find(userSearch) {
     } else {
       card.style.display = "none";
     }
->>>>>>> 7626e31d42ea65ef772898cd53560c3cfbbf7942
   });
 }
 find();
 
 /* function add(x,y){
   x + y
-} */
-<<<<<<< HEAD
-function getUser(userSearch) {
-  let userSearch = document.getElementById("title").value.trim();
-  console.log(searched);
-  // `animeCrap.com/${x}`
-}
-getUser(userSearch);
-/* function getThing(){
-=======
-/* getAllData(x){
-  `animeCrap.com/${x}`
-}
-function getThing(){
->>>>>>> 7626e31d42ea65ef772898cd53560c3cfbbf7942
-  //x = get user inoput from form
-  getAllData(x)
 } */
