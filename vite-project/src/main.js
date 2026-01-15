@@ -118,13 +118,37 @@ document.getElementById("searchform").addEventListener("submit", function (e) {
   }
 });
  */
+
+async function getUserData(userSearch) {
+  try {
+    const response = await fetch(
+      `https://api.jikan.moe/v4/anime/${userSearch}`
+    );
+    if (response.status != 200) {
+      throw new Error(response);
+    } else {
+      const data = await response.json();
+      data.data.forEach((card) => console.log(card));
+      return data;
+    }
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 function find(userSearch) {
   let form = document.getElementById("searchform");
   console.log("form");
-  form.addEventListener(enter, function (e) {
+  form.addEventListener("submit", function (e) {
     e.preventDefault();
-    console.log(works);
-    let userSearch;
+    console.log("working");
+    userSearch = document.getElementById("title");
+    getUserData(userSearch);
+    if (userSearch === `${data.title_english || data.title}`) {
+      card.style.display = "";
+    } else {
+      card.style.display = "none";
+    }
   });
 }
 find();
