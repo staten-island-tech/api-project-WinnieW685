@@ -3,37 +3,53 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <link rel="stylesheet" href="/src/style.css">
+    <link rel="stylesheet" href="/src/style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>vite-project</title>
   </head>
   <body>
     <form id="searchform" class="max-w-md mx-auto">
-        <label for="search" class="block mb-2.5 text-sm font-medium text-heading sr-only ">Search</label>
-    <div class="relative">
-      <div
-        class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none"
+      <label
+        for="search"
+        class="block mb-2.5 text-sm font-medium text-heading sr-only"
+        >Search</label
       >
-     <svg class="w-4 h-4 text-body" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"/></svg></div>
-     <div>
-        <input
-          type="text"
-          id="title"
-          placeholder="Search any anime"
-          class="block w-full p-3 px-9 py-4 pe-24 bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand shadow-xs placeholder:text-body rounded"
-        />
-
-        <button
-          type="submit"
-          id="submit"
-          class="absolute end-1.5 top-1/2 -translate-y-1/2
-         !bg-blue-600 !hover:bg-blue-700
-         !text-white text-xs font-medium
-         px-3 py-1.5 rounded
-         focus:ring-4 focus:ring-blue-300"
+      <div class="relative">
+        <div
+          class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none"
         >
-          Submit
-        </button>
+          <svg
+            class="w-4 h-4 text-body"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-width="2"
+              d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"
+            />
+          </svg>
+        </div>
+        <div>
+          <input
+            type="text"
+            id="title"
+            placeholder="Search any anime"
+            class="block w-full p-3 px-9 py-4 pe-24 bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand shadow-xs placeholder:text-body rounded"
+          />
+
+          <button
+            type="submit"
+            id="submit"
+            class="absolute end-1.5 top-1/2 -translate-y-1/2 bg-blue-600! !hover:bg-blue-700 text-white! text-xs font-medium px-3 py-1.5 rounded focus:ring-4 focus:ring-blue-300"
+          >
+            Submit
+          </button>
         </div>
       </div>
     </form>
@@ -42,10 +58,13 @@
 
     <div id="app"></div>
 
-    <div id="cards" class="card block bg-base-100 w-200 shadow-sm">
-    </div>
+    <div id="cards" class="card block bg-base-100 w-200 shadow-sm"></div>
 
-    <p2 class="text-center block w-200 p-3 ps-9 bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand shadow-xs placeholder:text-body">Warning: Some anime may not be able to be searced up because api v4 from 2020</p2>
+    <p2
+      class="text-center block w-200 p-3 ps-9 bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand shadow-xs placeholder:text-body"
+      >Warning: Some anime may not be able to be searced up because api v4 from
+      2020</p2
+    >
 
     <h2 id="api-response"></h2>
     <div id="app"></div>
